@@ -57,9 +57,9 @@ model VerificationToken {
 model Anuncio {
   id_anuncio    String    @id @default(cuid())
   title         String
-  description   String?   
+  description   String   
   profesorId    String
-  Asignatura    String?
+  Asignatura    String
   level         String
   price         Int
 
