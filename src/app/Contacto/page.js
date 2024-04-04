@@ -9,7 +9,7 @@ export default function Contacto(){
                         <div className="w-[51%]">
                             <p>Contáctanos</p>
                             <p className="text-[15px] mt-[11px]"> <span className="icon-phone text-[14px] mr-[14px]"/>93 100 6211</p>
-                            <p className="text-[15px] mt-[13px]"> <span className="icon-mail text-[14px] mr-[14px]"/>info@cutomclass.com</p>
+                            <p className="text-[15px] mt-[13px]"> <span className="icon-mail text-[14px] mr-[14px]"/>es.customclass@gmail.com</p>
 
                             <p className="mt-[53px]">Síguenos</p>
                             <p className="text-[15px] mt-[13px]"> <span className="icon-instagram text-[14px] mr-[14px]"/>Instagram</p>
