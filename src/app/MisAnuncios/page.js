@@ -4,7 +4,7 @@ import { MiAnuncioItem } from "../components/items/MiAnuncioItem"
 import { useState } from "react"
 
 
-export default function misAnuncios(){
+export default function MisAnuncios(){
     const [anuncios, setAnuncios] = useState([
         {
             title: "Clases de física",

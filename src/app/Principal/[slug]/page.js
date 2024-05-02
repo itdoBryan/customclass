@@ -36,7 +36,7 @@ const searchProductBySlug = (slug)=>{
     })
     return resolve
 }
-export default function slug({params}){
+export default function Slug({params}){
     const {slug} = params;
     var anuncio = searchProductBySlug(slug);
     return(
