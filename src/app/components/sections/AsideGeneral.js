@@ -4,14 +4,15 @@ import { ClasesReservadas } from "../buttons/ClasesReservadas";
 import { MisAnuncios } from "../buttons/MisAnuncios";
 import { LogOut } from "../buttons/LogOut";
 import { PaginaPrincipal } from "../buttons/PaginaPrincipal";
-
+import { useSession } from "next-auth/react";
 
 export function AsideGeneral(){
+    const sesion = useSession()
     return(
         <aside className="w-full sm:w-[25%] min-h-[800px] sm:min-h-screen bg-[#061a2d] flex flex-col items-center pb-[50px] sm:pb-0">
             <Image src={"/fotoperfil.webp"} width={150} height={50} alt="foto de perfil" className="mt-[50px]" />
-            <p className="text-white">Nombre de  Usuario</p>
-            <p className="text-white">correo@correo.com</p>
+            <p className="text-white">{sesion.data.user.name}</p>
+            <p className="text-white">{sesion.data.user.email}</p>
 
             <div className="flex flex-col gap-y-[20px] w-full items-center my-auto">
                 <PaginaPrincipal/>

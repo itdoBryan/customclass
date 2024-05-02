@@ -1,5 +1,7 @@
+'use client'
 import { AsidePrincipal} from "../components/sections/AsidePrincipal"
 import { AnuncioItem } from "../components/items/AnuncioItem"
+import { useSession } from "next-auth/react"
 import Link from "next/link"
 const anuncios = [
     {
@@ -29,6 +31,10 @@ const anuncios = [
     
 ]
 export default function Principal(){
+    const sesion = useSession()
+    if(sesion.status == "unauthenticated"){
+        location.href = "http://localhost:3000"
+    }
     return(
         <main className="w-screen h-screen flex flex-col sm:flex-row bg-[#2271b3]">
             <div className="w-full sm:w-[75%] h-screen flex flex-col items-center mt-[100px] ">

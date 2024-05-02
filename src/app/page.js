@@ -2,7 +2,7 @@
 import { LoginSection} from "./components/sections/LoginSection"
 
 export default function Home() {
-
+  
   return (
       <main className="w-screen h-full flex flex-col sm:flex-row">
         <div className="w-full sm:w-[75%] flex items-center">
