@@ -4,7 +4,7 @@ import { MiAnuncioItem } from "../components/items/MiAnuncioItem"
 import { useState } from "react"
 
 
-export default function slug({params}){
+export default function misAnuncios(){
     const [anuncios, setAnuncios] = useState([
         {
             title: "Clases de física",
@@ -41,6 +41,7 @@ export default function slug({params}){
         }
         setAnuncios(array)
     }
+
     return(
         <main className="w-screen h-full flex flex-col sm:flex-row bg-[#2271b3]">
             <div className="w-full sm:w-[75%] flex flex-col items-center mt-[8%] ">
