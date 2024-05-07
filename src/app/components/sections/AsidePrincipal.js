@@ -3,16 +3,13 @@ import { Contacto } from "../buttons/Contacto";
 import { ClasesReservadas } from "../buttons/ClasesReservadas";
 import { MisAnuncios } from "../buttons/MisAnuncios";
 import { LogOut } from "../buttons/LogOut";
-import { useSession } from "next-auth/react";
 
 export function AsidePrincipal(){
-    const sesion = useSession()
-    console.log(sesion)
     return(
         <aside className={"w-full sm:w-[25%] h-screen bg-[#061a2d] flex flex-col items-center pb-[50px]"}>
-            <Image src={sesion.status == "authenticated" ? "/fotoperfil.webp" : "/fotoperfil.webp"} width={150} height={50} alt="foto de perfil" className="mt-[30px]" />
-            <p className="text-white">{sesion.status == "authenticated" ? sesion.data.user.name : ""}</p>
-            <p className="text-white">{sesion.status == "authenticated" ? sesion.data.user.email : ""}</p>
+            <Image src="/fotoperfil.webp" width={150} height={50} alt="foto de perfil" className="mt-[30px]" />
+            <p className="text-white">ppppppppppppp</p>
+            <p className="text-white">ffffffffffff</p>
             <form className="my-auto gap-y-[20px] flex flex-col w-full">
                 <div className="flex flex-col text-white items-center">
                     <label className="text-[15px] mb-[10px]">Elige el nivel</label>

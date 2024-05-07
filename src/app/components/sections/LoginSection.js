@@ -4,13 +4,8 @@ import { AppleLogin } from "../buttons/AppleLogin"
 import { FacebookLogin } from "../buttons/FacebookLogin"
 import { EmailLogin } from "../buttons/EmailLogin"
 import { Contacto } from "../buttons/Contacto"
-import { useSession } from "next-auth/react"
 
 export function LoginSection(){
-    const sesion = useSession();
-    if(sesion.status === "authenticated"){
-        location.href = "http://localhost:3000/Principal"
-    }
     return(
         <aside className="w-full sm:w-[25%] bg-[#061a2d] h-screen flex items-center flex-col gap-y-[80px]">
             <span className="icon-login text-[100px] pt-[70px] text-[50px] text-center text-white"> 
