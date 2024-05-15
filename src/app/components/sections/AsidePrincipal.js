@@ -6,7 +6,7 @@ import { LogOut } from "../buttons/LogOut";
 
 export function AsidePrincipal(){
     return(
-        <aside className={"w-full sm:w-[25%] h-screen bg-[#061a2d] flex flex-col items-center pb-[50px]"}>
+        <aside className={"w-full sm:w-[25%] sm:min-w-[400px] h-screen min-h-[850px] bg-[#00569D] flex flex-col items-center"}>
             <Image src="/fotoperfil.webp" width={150} height={50} alt="foto de perfil" className="mt-[30px]" />
             <p className="text-white">ppppppppppppp</p>
             <p className="text-white">ffffffffffff</p>

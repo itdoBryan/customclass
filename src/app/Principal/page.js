@@ -1,8 +1,55 @@
-'use client'
 import { AsidePrincipal} from "../components/sections/AsidePrincipal"
 import { AnuncioItem } from "../components/items/AnuncioItem"
 import Link from "next/link"
 const anuncios = [
+    {
+        title: "Clases de matematicas",
+        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.",
+        category: "Matematicas",
+        price: 20,
+        level: "Bachillerato",
+        slug: "anuncio1",
+        profesor: {
+            nombre: "Pablo Escobar",
+            description: "Hola, soy Pablo, experto en comercio y marketing. Con más de 10 años de experiencia en el sector y enfocado en transmitir mis conocimientos"
+        }
+    },
+    {
+        title: "Clases de física",
+        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium",
+        category: "fisica",
+        price: 10,
+        level: "ESO",
+        slug: "anuncio2",
+        profesor: {
+            nombre: "Rodrigo Díaz",
+            description: "Hola, soy Rodri, titulado en integración social."
+        }
+    },
+    {
+        title: "Clases de matematicas",
+        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.",
+        category: "Matematicas",
+        price: 20,
+        level: "Bachillerato",
+        slug: "anuncio1",
+        profesor: {
+            nombre: "Pablo Escobar",
+            description: "Hola, soy Pablo, experto en comercio y marketing. Con más de 10 años de experiencia en el sector y enfocado en transmitir mis conocimientos"
+        }
+    },
+    {
+        title: "Clases de física",
+        description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium",
+        category: "fisica",
+        price: 10,
+        level: "ESO",
+        slug: "anuncio2",
+        profesor: {
+            nombre: "Rodrigo Díaz",
+            description: "Hola, soy Rodri, titulado en integración social."
+        }
+    },
     {
         title: "Clases de matematicas",
         description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit maiores aperiam earum unde sequi, debitis odit eos officiis dolore quos consequatur accusantium.",
@@ -32,8 +79,8 @@ const anuncios = [
 export default function Principal(){
 
     return(
-        <main className="w-screen h-screen flex flex-col sm:flex-row bg-[#2271b3]">
-            <div className="w-full sm:w-[75%] h-screen flex flex-col items-center mt-[100px] ">
+        <main className="w-screen h-screen sm:min-h-[850px] flex flex-col sm:flex-row bg-[#2271b3]">
+            <div className="w-full sm:w-[75%] min-h-[600px] overflow-y-scroll flex flex-col items-center mt-[100px] no-scrollbar">
             {anuncios.map((anuncio, key)=>(
                 <Link className="flex justify-center" key={key} href={"/Principal/"+anuncio.slug}>
                     <AnuncioItem anuncio={anuncio}/>

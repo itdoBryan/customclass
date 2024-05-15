@@ -1,5 +1,5 @@
 import { AsideGeneral} from "../../components/sections/AsideGeneral"
-import { ReservarClaseAnuncio} from "../../components/buttons/ReservarClaseAnuncio"
+import { AnuncioPrincipal } from "@/app/components/items/AnuncioPrincipal"
 const anuncios = [
     {
         title: "Clases de matematicas",
@@ -42,22 +42,7 @@ export default function Slug({params}){
     return(
         <main className="w-screen h-full flex flex-col sm:flex-row bg-[#2271b3]">
             <div className="w-full sm:w-[75%] flex flex-col items-center mt-[8%] ">
-                <div className="w-[85%] h-[500px] flex bg-white rounded mt-[5%] items-center">
-                    <div className="flex flex-col w-[85%] h-full mx-auto mt-[10%] gap-y-[5%]">
-                        <h2 className="font-bold text-[20px]">{anuncio.title}</h2>
-                        <p>{anuncio.description}</p>
-                        <div>
-                            <b>{anuncio.profesor.nombre}</b>
-                            <p>{anuncio.profesor.description}</p>
-                        </div>
-                        <div className="flex justify-between items-center">
-                            <p><b>Precio: </b> {anuncio.price}€</p>
-                            <p><b>Materia: </b> {anuncio.category}</p>
-                            <p><b>Nivel: </b> {anuncio.level}</p>
-                            <ReservarClaseAnuncio/>
-                        </div>
-                    </div>
-                </div>
+                <AnuncioPrincipal anuncio={anuncio}/>
             </div>
             <AsideGeneral/>
         </main>

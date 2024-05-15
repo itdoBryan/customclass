@@ -13,6 +13,22 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    screens:{
+      'sm': '900px'
+    }
   },
-  plugins: [],
+  plugins: [
+    function({addUtilities}){
+      const newUtilities = {
+        ".no-scrollbar::-webkit-scrollbar":{
+          display:"none",
+        },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        }
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 };
