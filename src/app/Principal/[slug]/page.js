@@ -1,5 +1,7 @@
+
 import { AsideGeneral} from "../../components/sections/AsideGeneral"
 import { AnuncioPrincipal } from "@/app/components/items/AnuncioPrincipal"
+
 const anuncios = [
     {
         title: "Clases de matematicas",

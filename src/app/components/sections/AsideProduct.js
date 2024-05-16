@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import { Contacto } from "../buttons/Contacto";
 import { ClasesReservadas } from "../buttons/ClasesReservadas";

@@ -1,15 +1,28 @@
+'use client'
 import Image from "next/image";
 import { Contacto } from "../buttons/Contacto";
 import { ClasesReservadas } from "../buttons/ClasesReservadas";
 import { MisAnuncios } from "../buttons/MisAnuncios";
-import { LogOut } from "../buttons/LogOut";
+import { LogOut} from "../buttons/LogOut";
+import { useSession } from "next-auth/react";
 
 export function AsidePrincipal(){
+    const sesion = useSession()
+    var nombre = ""
+    var correo = ""
+    var imgUser = "/fotoperfil.webp"
+    if(sesion.status=="authenticated"){
+        nombre = sesion.data.user.name
+        correo = sesion.data.user.email
+        imgUser = sesion.data.user.image
+    }
+
+    console.log(imgUser)
     return(
         <aside className={"w-full sm:w-[25%] sm:min-w-[400px] h-screen min-h-[850px] bg-[#00569D] flex flex-col items-center"}>
-            <Image src="/fotoperfil.webp" width={150} height={50} alt="foto de perfil" className="mt-[30px]" />
-            <p className="text-white">ppppppppppppp</p>
-            <p className="text-white">ffffffffffff</p>
+            <Image src={imgUser} width={150} height={50} alt="foto de perfil" className="mt-[30px] rounded-full" />
+            <p className="text-white">{nombre}</p>
+            <p className="text-white">{correo}</p>
             <form className="my-auto gap-y-[20px] flex flex-col w-full">
                 <div className="flex flex-col text-white items-center">
                     <label className="text-[15px] mb-[10px]">Elige el nivel</label>

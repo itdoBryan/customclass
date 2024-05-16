@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Contacto } from "../buttons/Contacto";
 import { ClasesReservadas } from "../buttons/ClasesReservadas";
 import { MisAnuncios } from "../buttons/MisAnuncios";
-import { LogOut } from "../buttons/LogOut";
 import { PaginaPrincipal } from "../buttons/PaginaPrincipal";
 import { useSession } from "next-auth/react";
-export function AsideGeneral(){
+
+export function AsideContacto(){
     const sesion = useSession()
     var nombre = ""
     var correo = ""
@@ -27,7 +27,6 @@ export function AsideGeneral(){
                 <Contacto/>
                 <ClasesReservadas/>
                 <MisAnuncios/>
-                <LogOut/>
             </div>
         </aside>
     )

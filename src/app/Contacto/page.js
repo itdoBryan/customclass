@@ -1,6 +1,20 @@
-import { AsideGeneral } from "../components/sections/AsideGeneral"
+'use client'
+import { AsideContacto } from "../components/sections/AsideContacto"
 
 export default function Contacto(){
+    const enviarMensaje = (event)=>{
+        event.preventDefault()
+        const nombre = document.getElementById("inputName").value
+        const email = document.getElementById("inputEmail").value
+        const telefono =document.getElementById("inputTelf").value
+        const mensaje = document.getElementById("inputMsg").value
+
+        console.log("nombre: " + nombre)
+        console.log("email: " + email)
+        console.log("telf: " + telefono)
+        console.log("msg: " + mensaje)
+
+    }
     return(
         <main className="w-screen h-screen flex flex-col sm:flex-row">
             <div className="w-full sm:w-[75%]">
@@ -20,18 +34,19 @@ export default function Contacto(){
                         </div>
                         <form className="w-[90%] sm:w-[41%] mt-[30px] sm:mt-0 uppercase flex flex-col">
                             <label className="text-[10px]">nombre<sup>*</sup></label>
-                            <input type="text" name="nombre" className="border-b border-black mt-[20px]"/>
+                            <input type="text" name="nombre" id="inputName" className="border-b border-black mt-[20px]"/>
                             <label className="mt-[40px] text-[10px]">email<sup>*</sup></label>
-                            <input type="email" name="email" className="border-b border-black mt-[20px]"/>
+                            <input type="email" name="email" id="inputEmail" className="border-b border-black mt-[20px]"/>
                             <label className="mt-[40px] text-[10px]">telefono<sup>*</sup></label>
-                            <input type="fel" name="telf" className="border-b border-black mt-[20px]"/>
+                            <input type="fel" name="telf" id="inputTelf" className="border-b border-black mt-[20px]"/>
                             <label className="mt-[40px] text-[10px]">mensaje</label>
-                            <input type="text" name="mensaje" className="border-b border-black mt-[20px] mb-[30px]"/>
+                            <input type="text" name="mensaje" id="inputMsg" className="border-b border-black mt-[20px] mb-[30px]"/>
+                            <button onClick={()=>{enviarMensaje(event)}} className="bg-[#00569D] text-white py-[5px] rounded">Enviar</button>
                         </form>
                     </div>
                 </section>
             </div>
-            <AsideGeneral/>
+            <AsideContacto/>
         </main>
     )
 }
