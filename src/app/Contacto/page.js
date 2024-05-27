@@ -1,19 +1,47 @@
 'use client'
 import { AsideContacto } from "../components/sections/AsideContacto"
-
+import { useState } from "react"
 export default function Contacto(){
-    const enviarMensaje = (event)=>{
+    const [enviado, setEnviado] = useState(false)
+    const [error, setError] = useState(false)
+
+    const enviarMensaje = async (event)=>{
         event.preventDefault()
         const nombre = document.getElementById("inputName").value
         const email = document.getElementById("inputEmail").value
         const telefono =document.getElementById("inputTelf").value
         const mensaje = document.getElementById("inputMsg").value
 
-        console.log("nombre: " + nombre)
-        console.log("email: " + email)
-        console.log("telf: " + telefono)
-        console.log("msg: " + mensaje)
+      
 
+        const res = await fetch("../api/send",{
+            method: "POST",
+            body: JSON.stringify({
+                nombre: nombre,
+                email: email,
+                telefono: telefono,
+                mensaje: mensaje
+            }),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+
+        })
+        const data = await res.json()
+        if(data.message == "Email enviado"){
+            setEnviado(true)
+            document.getElementById("inputName").value = ""
+            document.getElementById("inputEmail").value = ""
+            document.getElementById("inputTelf").value = ""
+            document.getElementById("inputMsg").value = ""
+        }else{
+            seterror(true)
+        }
+
+        setTimeout(() => {
+            setEnviado(false)
+            setError(false)
+          }, "3000");
     }
     return(
         <main className="w-screen h-screen flex flex-col sm:flex-row">
@@ -23,7 +51,7 @@ export default function Contacto(){
                         <div className="w-[51%]">
                             <p>Contáctanos</p>
                             <p className="text-[15px] mt-[11px]"> <span className="icon-phone text-[14px] mr-[14px]"/>93 100 6211</p>
-                            <p className="text-[15px] mt-[13px]"> <span className="icon-mail text-[14px] mr-[14px]"/>es.customclass@gmail.com</p>
+                            <p className="text-[15px] mt-[13px]"> <span className="icon-mail text-[14px] mr-[14px]"/>customclassproyect@gmail.com</p>
 
                             <p className="mt-[53px]">Síguenos</p>
                             <p className="text-[15px] mt-[13px]"> <span className="icon-instagram text-[14px] mr-[14px]"/>Instagram</p>
@@ -42,6 +70,8 @@ export default function Contacto(){
                             <label className="mt-[40px] text-[10px]">mensaje</label>
                             <input type="text" name="mensaje" id="inputMsg" className="border-b border-black mt-[20px] mb-[30px]"/>
                             <button onClick={()=>{enviarMensaje(event)}} className="bg-[#00569D] text-white py-[5px] rounded">Enviar</button>
+                            <strong className={enviado ? "text-center mt-[10px] text-[#008000]" : "hidden"}>Mensaje Enviado </strong>
+                            <strong className={error ? "text-center mt-[10px] text-[#FF0000]" : "hidden"}>Error </strong>
                         </form>
                     </div>
                 </section>

@@ -18,7 +18,7 @@ export function AnuncioPrincipal({anuncio}){
                     </div>
                     <div>
                         <p className="mb-[10px]"><b>Nivel: </b> {anuncio.level}</p>
-                        <ReservarClaseAnuncio/>
+                        <ReservarClaseAnuncio anuncio={anuncio}/>
                     </div>
                 </div>
             </div>
