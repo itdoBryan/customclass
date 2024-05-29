@@ -86,7 +86,7 @@ export default function Principal(){
 
     return(
         <main className="w-screen h-screen sm:min-h-[850px] flex flex-col sm:flex-row bg-[#2271b3]">
-            <div className="w-full sm:w-[75%] min-h-[600px] overflow-y-scroll flex flex-col items-center mt-[100px] no-scrollbar">
+            <div className="w-full sm:w-[75%] min-h-[600px] flex flex-col items-center mt-[100px] overflow-y-scroll no-scrollbar">
             {anuncios.map((anuncio, key)=>(
                 <Link className="flex justify-center" key={key} href={"/Principal/"+anuncio.slug}>
                     <AnuncioItem anuncio={anuncio}/>

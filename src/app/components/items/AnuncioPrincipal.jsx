@@ -1,6 +1,6 @@
 import {ReservarClaseAnuncio} from "../buttons/ReservarClaseAnuncio"
 
-export function AnuncioPrincipal({anuncio}){
+export function AnuncioPrincipal({anuncio}){ 
     
     return(
         <div className="w-[85%] min-h-[500px] flex bg-white rounded items-center  overflow-scroll">

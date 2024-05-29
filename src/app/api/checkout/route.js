@@ -13,8 +13,8 @@ export async function POST (request){
                 quantity: 1
             }
         ],
-        success_url: 'https://customclass.vercel.app/Principal',
-        cancel_url: 'https://customclass.vercel.app/Principal'
+        success_url: 'http://localhost:3000/Principal',    
+        cancel_url: 'http://localhost:3000/Principal'
     })
 
     

@@ -35,7 +35,7 @@ export default function Contacto(){
             document.getElementById("inputTelf").value = ""
             document.getElementById("inputMsg").value = ""
         }else{
-            seterror(true)
+            setError(true)
         }
 
         setTimeout(() => {

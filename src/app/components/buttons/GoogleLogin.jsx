@@ -1,6 +1,6 @@
 'use client'
 import { signIn } from "next-auth/react"
-
+ 
 export function GoogleLogin(){
     return(
         <button className="w-[50%] bg-[#ff0000] text-white border-white border-[1px] py-[10px] justify-center items-center rounded-[10px] flex items-center"
