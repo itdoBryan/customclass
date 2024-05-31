@@ -1,6 +1,7 @@
 'use client'
 import { AsideContacto } from "../components/sections/AsideContacto"
 import { useState } from "react"
+
 export default function Contacto(){
     const [enviado, setEnviado] = useState(false)
     const [error, setError] = useState(false)
