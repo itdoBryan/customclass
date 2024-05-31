@@ -4,18 +4,18 @@ import { Contacto } from "../buttons/Contacto";
 import { ClasesReservadas } from "../buttons/ClasesReservadas";
 import { MisAnuncios } from "../buttons/MisAnuncios";
 import { LogOut} from "../buttons/LogOut";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 
 export function AsidePrincipal(){
-    const sesion = useSession()
-    var nombre = ""
-    var correo = ""
+    // const sesion = useSession()
+    var nombre = "Usuario Invitado"
+    var correo = "usuario@invitado.com"
     var imgUser = "/fotoperfil.webp"
-    if(sesion.status=="authenticated"){
-        nombre = sesion.data.user.name
-        correo = sesion.data.user.email
-        imgUser = sesion.data.user.image
-    }
+    // if(sesion.status=="authenticated"){
+    //     nombre = sesion.data.user.name
+    //     correo = sesion.data.user.email
+    //     imgUser = sesion.data.user.image
+    // }
 
     console.log(imgUser)
     return(
