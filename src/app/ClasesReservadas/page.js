@@ -115,7 +115,7 @@ export default function ClasesReservadas(){
 
                     {
                         clasesReservadas.map((reserva)=>(
-                            <p>{`Tienes una clase de ${reserva.category} con el profesor ${reserva.profesor.nombre}`}</p>
+                            <p key={reserva.id}>{`Tienes una clase de ${reserva.category} con el profesor ${reserva.profesor.nombre}`}</p>
                         ))
                     }
                 </div>
